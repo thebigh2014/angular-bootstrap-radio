@@ -1,14 +1,14 @@
 {
-  "name": "angular-bootstrap-checkbox",
-  "description": "A Twitter Bootstrap styled checkbox to use with AngularJS",
+  "name": "angular-bootstrap-radio",
+  "description": "A Twitter Bootstrap styled radio button to use with AngularJS",
   "authors": [
-    "Sebastian Hammerl, Getslash GmbH"
+    "Sebastian Hammerl, Getslash GmbH, Helmut Wollenberg"
   ],
-  "version": "0.4.0",
+  "version": "0.1.0",
   "licence": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sebastianha/angular-bootstrap-checkbox.git"
+    "url": "git://github.com/sebastianha/angular-bootstrap-radio.git"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

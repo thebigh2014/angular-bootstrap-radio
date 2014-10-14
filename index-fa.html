@@ -3,14 +3,15 @@
 <head>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="dist/angular-bootstrap-radio.css" />
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="dist/angular-bootstrap-checkbox.min.js"></script>
-  <script src="dist/angular-bootstrap-checkbox-fontawesome-tpl.js"></script>
+  <!-- <script src="dist/angular-bootstrap-radio.min.js"></script> -->
+  <script src="src/angular-bootstrap-radio.js"></script>
   <script src="app.js"></script>
 </head>
-<body ng-app="angular-bootstrap-checkbox-test" ng-controller="index">
+<body ng-app="angular-bootstrap-radio-test" ng-controller="index">
 
 <table class="table" style="width:800px;">
   <tr>
@@ -30,55 +31,68 @@
 
   <tr>
     <td>
-      Minimal example
+      Minimal example<br />
+      initial = &quot;&quot; (empty)
     </td>
     <td>
-      <checkbox id="checkbox0" ng-model="checkboxModel[0]"></checkbox>
+      <radio config="faConfig" id="radio0First" ng-model="radioModel[0]" value="first"></radio>
+      <radio config="faConfig" id="radio0Second" ng-model="radioModel[0]" value="second"></radio>
+      <radio config="faConfig" id="radio0Third" ng-model="radioModel[0]" value="third"></radio>
+      <radio config="faConfig" id="radio0Fourth" ng-model="radioModel[0]" value="fourth"></radio>
     </td>
     <td>
-      <span id="checkboxModel0" ng-bind="checkboxModel[0]"></span>
+      <span id="radioModel0" ng-bind="radioModel[0]">
     </td>
     <td>
-      <button id="checkboxButton0true" style="width:150px;" ng-click="checkboxModel[0] = true">
-        Set to true
-      </button><br>
-      <button id="checkboxButton0false" style="width:150px;" ng-click="checkboxModel[0] = false">
-        Set to false
+      <button id="radioButton0None" style="width:150px;" ng-click="radioModel[0] = ''">
+        Set to empty
+      </button><br />
+      <button id="radioButton0First" style="width:150px;" ng-click="radioModel[0] = 'first'">
+        Set to first
+      </button><br />
+      <button id="radioButton0Second" style="width:150px;" ng-click="radioModel[0] = 'second'">
+        Set to second
+      </button><br/ >
+      <button id="radioButton0Second" style="width:150px;" ng-click="radioModel[0] = 'third'">
+        Set to third
+      </button><br />
+      <button id="radioButton0Second" style="width:150px;" ng-click="radioModel[0] = 'fourth'">
+        Set to fourth
       </button>
     </td>
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[0]"
-&gt;&lt;/checkbox&gt</pre>
+<pre>&lt;radio
+    ng-model="radioModel[0]"
+&gt;&lt;/radio&gt</pre>
 
     </td>
   </tr>
 
-  <tr>
+  <!-- <tr>
     <td>
       Example with custom name attribute
     </td>
     <td>
-      <checkbox id="checkbox1" ng-model="checkboxModel[1]" name="custom-name"></checkbox>
+      <radio config="faConfig" id="radio1" ng-model="radioModel[1]" name="custom-name"></radio>
     </td>
     <td>
-      <span id="checkboxModel1" ng-bind="checkboxModel[1]"></span>
+      <span id="radioModel1" ng-bind="radioModel[1]"></span>
     </td>
     <td>
-      <button id="checkboxButton1true" style="width:150px;" ng-click="checkboxModel[1] = true">
+      <button id="radioButton1true" style="width:150px;" ng-click="radioModel[1] = true">
         Set to true
       </button><br>
-      <button id="checkboxButton1false" style="width:150px;" ng-click="checkboxModel[1] = false">
+      <button id="radioButton1false" style="width:150px;" ng-click="radioModel[1] = false">
         Set to false
       </button>
     </td>
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[1]"
+<pre>&lt;radio
+    ng-model="radioModel[1]"
     <b>name="custom-name"</b>
-&gt;&lt;/checkbox&gt</pre>
+&gt;&lt;/radio&gt</pre>
 
     </td>
   </tr>
@@ -88,28 +102,28 @@
       Example with custom true value
     </td>
     <td>
-      <checkbox id="checkbox2" ng-model="checkboxModel[2]" ng-true-value="The Truth"></checkbox>
+      <radio config="faConfig" id="radio2" ng-model="radioModel[2]" ng-true-value="The Truth"></radio>
     </td>
     <td>
-      <span id="checkboxModel2" ng-bind="checkboxModel[2]"></span>
+      <span id="radioModel2" ng-bind="radioModel[2]"></span>
     </td>
     <td>
-      <button id="checkboxButton2true" style="width:150px;" ng-click="checkboxModel[2] = true">
+      <button id="radioButton2true" style="width:150px;" ng-click="radioModel[2] = true">
         Set to true
       </button><br>
-      <button id="checkboxButton2false" style="width:150px;" ng-click="checkboxModel[2] = false">
+      <button id="radioButton2false" style="width:150px;" ng-click="radioModel[2] = false">
         Set to false
       </button><br>
-      <button id="checkboxButton2truth" style="width:150px;" ng-click="checkboxModel[2] = 'The Truth'">
+      <button id="radioButton2truth" style="width:150px;" ng-click="radioModel[2] = 'The Truth'">
         Set to "The Truth"
       </button>
     </td>
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[2]"
+<pre>&lt;radio
+    ng-model="radioModel[2]"
     <b>ng-true-value="The Truth"</b>
-&gt;&lt;/checkbox&gt</pre>
+&gt;&lt;/radio&gt</pre>
 
     </td>
   </tr>
@@ -119,28 +133,28 @@
       Example with custom false value
     </td>
     <td>
-      <checkbox id="checkbox3" ng-model="checkboxModel[3]" ng-false-value="The Untruth"></checkbox>
+      <radio config="faConfig" id="radio3" ng-model="radioModel[3]" ng-false-value="The Untruth"></radio>
     </td>
     <td>
-      <span id="checkboxModel3" ng-bind="checkboxModel[3]"></span>
+      <span id="radioModel3" ng-bind="radioModel[3]"></span>
     </td>
     <td>
-      <button id="checkboxButton3true" style="width:150px;" ng-click="checkboxModel[3] = true">
+      <button id="radioButton3true" style="width:150px;" ng-click="radioModel[3] = true">
         Set to true
       </button><br>
-      <button id="checkboxButton3false" style="width:150px;" ng-click="checkboxModel[3] = false">
+      <button id="radioButton3false" style="width:150px;" ng-click="radioModel[3] = false">
         Set to false
       </button><br>
-      <button id="checkboxButton3untruth" style="width:150px;" ng-click="checkboxModel[3] = 'The Untruth'">
+      <button id="radioButton3untruth" style="width:150px;" ng-click="radioModel[3] = 'The Untruth'">
         Set to "The Untruth"
       </button>
     </td>
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[3]"
+<pre>&lt;radio
+    ng-model="radioModel[3]"
     <b>ng-false-value="The Untruth"</b>
-&gt;&lt;/checkbox&gt</pre>
+&gt;&lt;/radio&gt</pre>
 
     </td>
   </tr>
@@ -150,32 +164,32 @@
       Example with custom true and false value
     </td>
     <td>
-      <checkbox id="checkbox4" ng-model="checkboxModel[4]" ng-true-value="The Truth" ng-false-value="The Untruth"></checkbox>
+      <radio config="faConfig" id="radio4" ng-model="radioModel[4]" ng-true-value="The Truth" ng-false-value="The Untruth"></radio>
     </td>
     <td>
-      <span id="checkboxModel4" ng-bind="checkboxModel[4]"></span>
+      <span id="radioModel4" ng-bind="radioModel[4]"></span>
     </td>
     <td>
-      <button id="checkboxButton4true" style="width:150px;" ng-click="checkboxModel[4] = true">
+      <button id="radioButton4true" style="width:150px;" ng-click="radioModel[4] = true">
         Set to true
       </button><br>
-      <button id="checkboxButton4false" style="width:150px;" ng-click="checkboxModel[4] = false">
+      <button id="radioButton4false" style="width:150px;" ng-click="radioModel[4] = false">
         Set to false
       </button><br>
-      <button id="checkboxButton4truth" style="width:150px;" ng-click="checkboxModel[4] = 'The Truth'">
+      <button id="radioButton4truth" style="width:150px;" ng-click="radioModel[4] = 'The Truth'">
         Set to "The Truth"
       </button><br>
-      <button id="checkboxButton4untruth" style="width:150px;" ng-click="checkboxModel[4] = 'The Untruth'">
+      <button id="radioButton4untruth" style="width:150px;" ng-click="radioModel[4] = 'The Untruth'">
         Set to "The Untruth"
       </button>
     </td>
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[4]"
+<pre>&lt;radio
+    ng-model="radioModel[4]"
     <b>ng-true-value="The Truth"</b>
     <b>ng-false-value="The Untruth"</b>
-&gt;&lt;/checkbox&gt</pre>
+&gt;&lt;/radio&gt</pre>
 
     </td>
   </tr>
@@ -185,95 +199,96 @@
       Example with change listener when clicked
     </td>
     <td>
-      <checkbox id="checkbox5" ng-model="checkboxModel[5]" ng-change="onChange()"></checkbox>
+      <radio config="faConfig" id="radio5" ng-model="radioModel[5]" ng-change="onChange()"></radio>
     </td>
     <td>
-      <span id="checkboxModel5" ng-bind="checkboxModel[5]"></span><br>
+      <span id="radioModel5" ng-bind="radioModel[5]"></span><br>
       <br>
       Clicks: <span id="changes" ng-bind="changes"></span>
     </td>
     <td>
-      <button id="checkboxButton5true" style="width:150px;" ng-click="checkboxModel[5] = true">
+      <button id="radioButton5true" style="width:150px;" ng-click="radioModel[5] = true">
         Set to true
       </button><br>
-      <button id="checkboxButton5false" style="width:150px;" ng-click="checkboxModel[5] = false">
+      <button id="radioButton5false" style="width:150px;" ng-click="radioModel[5] = false">
         Set to false
       </button>
     </td>
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[5]"
+<pre>&lt;radio
+    ng-model="radioModel[5]"
     <b>ng-change="onChange()"</b>
-&gt;&lt;/checkbox&gt</pre>
+&gt;&lt;/radio&gt</pre>
 
     </td>
   </tr>
 
   <tr>
     <td>
-      Example disabled checkbox
+      Example disabled radio
     </td>
     <td>
-      <checkbox id="checkbox6" ng-model="checkboxModel[6]" ng-disabled="isDisabled === true"></checkbox>
+      <radio config="faConfig" id="radio6" ng-model="radioModel[6]" ng-disabled="isDisabled === true"></radio>
     </td>
     <td>
-      <span id="checkboxModel6" ng-bind="checkboxModel[6]"></span>
+      <span id="radioModel6" ng-bind="radioModel[6]"></span>
     </td>
     <td>
-      <button id="checkboxButton6true" style="width:150px;" ng-click="checkboxModel[6] = true">
+      <button id="radioButton6true" style="width:150px;" ng-click="radioModel[6] = true">
         Set to true
       </button><br>
-      <button id="checkboxButton6false" style="width:150px;" ng-click="checkboxModel[6] = false">
+      <button id="radioButton6false" style="width:150px;" ng-click="radioModel[6] = false">
         Set to false
       </button>
-      <button id="checkboxButton6enable" style="width:150px;" ng-click="isDisabled = false">
+      <button id="radioButton6enable" style="width:150px;" ng-click="isDisabled = false">
         Enable
       </button>
-      <button id="checkboxButton6disable" style="width:150px;" ng-click="isDisabled = true">
+      <button id="radioButton6disable" style="width:150px;" ng-click="isDisabled = true">
         Disable
       </button>
     </td>
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[6]"
+<pre>&lt;radio
+    ng-model="radioModel[6]"
     <b>ng-disabled="isDisabled === true"</b>
-&gt;&lt;/checkbox&gt</pre>
+&gt;&lt;/radio&gt</pre>
 
     </td>
-  </tr>
+  </tr> -->
 
   <tr>
     <td>
       Different Sizes (normal, large, larger, largest)
     </td>
-    <td colspan="3">
-      <checkbox id="checkbox7a" ng-model="checkboxModel[7]"></checkbox>
-      <checkbox id="checkbox7b" large ng-model="checkboxModel[7]"></checkbox>
-      <checkbox id="checkbox7c" larger ng-model="checkboxModel[7]"></checkbox>
-      <checkbox id="checkbox7d" largest ng-model="checkboxModel[7]"></checkbox>
+    <td></td>
+    <td colspan="2">
+      <radio config="faConfig" id="radio7a" ng-model="radioModel[4]" value="top"></radio>
+      <radio config="faConfig" id="radio7b" class="large" ng-model="radioModel[4]" value="top"></radio>
+      <radio config="faConfig" id="radio7c" class="larger" ng-model="radioModel[4]" value="top"></radio>
+      <radio config="faConfig" id="radio7d" class="largest" ng-model="radioModel[4]" value="top"></radio>
       <br><br>
-      <checkbox id="checkbox8a" ng-model="checkboxModel[8]"></checkbox>
-      <checkbox id="checkbox8b" large ng-model="checkboxModel[8]"></checkbox>
-      <checkbox id="checkbox8c" larger ng-model="checkboxModel[8]"></checkbox>
-      <checkbox id="checkbox8d" largest ng-model="checkboxModel[8]"></checkbox>
+      <radio config="faConfig" id="radio8a" ng-model="radioModel[4]" value="bottom"></radio>
+      <radio config="faConfig" id="radio8b" class="large" ng-model="radioModel[4]" value="bottom"></radio>
+      <radio config="faConfig" id="radio8c" class="larger" ng-model="radioModel[4]" value="bottom"></radio>
+      <radio config="faConfig" id="radio8d" class="largest" ng-model="radioModel[4]" value="bottom"></radio>
     </td>
 
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[7]"
-&gt;&lt;/checkbox&gt
-&lt;checkbox <b>large</b>
-    ng-model="checkboxModel[7]"
-&gt;&lt;/checkbox&gt
-&lt;checkbox <b>larger</b>
-    ng-model="checkboxModel[7]"
-&gt;&lt;/checkbox&gt
-&lt;checkbox <b>largest</b>
-    ng-model="checkboxModel[7]"
-&gt;&lt;/checkbox&gt</pre>
+<pre>&lt;radio
+    ng-model="radioModel[4]" &hellip;
+&gt;&lt;/radio&gt
+&lt;radio class="<b>large</b>"
+    ng-model="radioModel[4]" &hellip;
+&gt;&lt;/radio&gt
+&lt;radio class="<b>larger</b>"
+    ng-model="radioModel[4]" &hellip;
+&gt;&lt;/radio&gt
+&lt;radio class="<b>largest</b>"
+    ng-model="radioModel[4]" &hellip;
+&gt;&lt;/radio&gt</pre>
 
     </td>
   </tr>
@@ -297,51 +312,51 @@
       danger:
     </td>
     <td>
-      <checkbox id="checkbox9a" ng-model="checkboxModel[9]"></checkbox>
+      <radio config="faConfig" id="radio9a" ng-model="radioModel[5]" value="left"></radio>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <checkbox id="checkbox10a" ng-model="checkboxModel[10]"></checkbox><br><br><br>
+      <radio config="faConfig" id="radio10a" ng-model="radioModel[5]" value="right"></radio><br><br><br>
 
-      <checkbox id="checkbox9b" class="btn-primary" ng-model="checkboxModel[9]"></checkbox>
+      <radio config="faConfig" id="radio9b" class="btn-primary" ng-model="radioModel[5]" value="left"></radio>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <checkbox id="checkbox10b" class="btn-primary" ng-model="checkboxModel[10]"></checkbox><br><br><br>
+      <radio config="faConfig" id="radio10b" class="btn-primary" ng-model="radioModel[5]" value="right"></radio><br><br><br>
 
-      <checkbox id="checkbox9c" class="btn-success" ng-model="checkboxModel[9]"></checkbox>
+      <radio config="faConfig" id="radio9c" class="btn-success" ng-model="radioModel[5]" value="left"></radio>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <checkbox id="checkbox10c" class="btn-success" ng-model="checkboxModel[10]"></checkbox><br><br><br>
+      <radio config="faConfig" id="radio10c" class="btn-success" ng-model="radioModel[5]" value="right"></radio><br><br><br>
 
-      <checkbox id="checkbox9d" class="btn-info" ng-model="checkboxModel[9]"></checkbox>
+      <radio config="faConfig" id="radio9d" class="btn-info" ng-model="radioModel[5]" value="left"></radio>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <checkbox id="checkbox10d" class="btn-info" ng-model="checkboxModel[10]"></checkbox><br><br><br>
+      <radio config="faConfig" id="radio10d" class="btn-info" ng-model="radioModel[5]" value="right"></radio><br><br><br>
 
-      <checkbox id="checkbox9e" class="btn-warning" ng-model="checkboxModel[9]"></checkbox>
+      <radio config="faConfig" id="radio9e" class="btn-warning" ng-model="radioModel[5]" value="left"></radio>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <checkbox id="checkbox10e" class="btn-warning" ng-model="checkboxModel[10]"></checkbox><br><br><br>
+      <radio config="faConfig" id="radio10e" class="btn-warning" ng-model="radioModel[5]" value="right"></radio><br><br><br>
 
-      <checkbox id="checkbox9f" class="btn-danger" ng-model="checkboxModel[9]"></checkbox>
+      <radio config="faConfig" id="radio9f" class="btn-danger" ng-model="radioModel[5]" value="left"></radio>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <checkbox id="checkbox10f" class="btn-danger" ng-model="checkboxModel[10]"></checkbox>
+      <radio config="faConfig" id="radio10f" class="btn-danger" ng-model="radioModel[5]" value="right"></radio>
     </td>
 
     <td style="width:300px;">
 
-<pre>&lt;checkbox
-    ng-model="checkboxModel[9]"
-&gt;&lt;/checkbox&gt
-&lt;checkbox <b>class="btn-primary"</b>
-    ng-model="checkboxModel[9]"
-&gt;&lt;/checkbox&gt
-&lt;checkbox <b>class="btn-success"</b>
-    ng-model="checkboxModel[9]"
-&gt;&lt;/checkbox&gt
-&lt;checkbox <b>class="btn-info"</b>
-    ng-model="checkboxModel[9]"
-&gt;&lt;/checkbox&gt
-&lt;checkbox <b>class="btn-warning"</b>
-    ng-model="checkboxModel[9]"
-&gt;&lt;/checkbox&gt
-&lt;checkbox <b>class="btn-danger"</b>
-    ng-model="checkboxModel[9]"
-&gt;&lt;/checkbox&gt</pre>
+<pre>&lt;radio
+    ng-model="radioModel[5]" &hellip;
+&gt;&lt;/radio&gt
+&lt;radio <b>class="btn-primary"</b>
+    ng-model="radioModel[5]" &hellip;
+&gt;&lt;/radio&gt
+&lt;radio <b>class="btn-success"</b>
+    ng-model="radioModel[5]" &hellip;
+&gt;&lt;/radio&gt
+&lt;radio <b>class="btn-info"</b>
+    ng-model="radioModel[5]" &hellip;
+&gt;&lt;/radio&gt
+&lt;radio <b>class="btn-warning"</b>
+    ng-model="radioModel[5]" &hellip;
+&gt;&lt;/radio&gt
+&lt;radio <b>class="btn-danger"</b>
+    ng-model="radioModel[5]" &hellip;
+&gt;&lt;/radio&gt</pre>
     </td>
   </tr>
 
@@ -349,18 +364,23 @@
     <td colspan="5">
       <b>app.js:</b>
       <pre>
-angular.module("angular-bootstrap-checkbox-test", ["ui.checkbox"])
+angular.module("angular-bootstrap-radio-test", ["ui.radio"])
 .controller("index", function($scope) {
-    $scope.checkboxModel = [
-        false, false, false,false, false, false, false, false, true, false, true
-    ];
+  $scope.radioModel = [
+    "", "second", "third", "fourth", "top", "left"
+  ];
 
-    $scope.changes = 0;
-    $scope.onChange = function() {
-        $scope.changes++;
-    };
+  $scope.changes = 0;
+  $scope.onChange = function() {
+    $scope.changes++;
+  };
 
-    $scope.isDisabled = false;
+  $scope.isDisabled = false;
+
+  $scope.faConfig = {
+    iconClass: 'fa fa-circle'
+  };
+
 });
 </pre>
     </td>

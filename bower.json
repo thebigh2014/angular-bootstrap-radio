@@ -1,16 +1,16 @@
 {
-  "name": "angular-bootstrap-checkbox",
-  "version": "0.4.0",
+  "name": "angular-bootstrap-radio",
+  "version": "0.1.0",
   "authors": [
-    "Sebastian Hammerl, Getslash GmbH"
+    "Sebastian Hammerl, Getslash GmbH, Helmut Wollenberg"
   ],
-  "description": "A Twitter Bootstrap styled checkbox to use with AngularJS",
-  "main": "angular-bootstrap-checkbox.js",
+  "description": "A Twitter Bootstrap styled radio button to use with AngularJS",
+  "main": "angular-bootstrap-radio.js",
   "keywords": [
     "angular",
     "angularjs",
     "bootstrap",
-    "checkbox",
+    "radio",
     "input"
   ],
   "license": "MIT",

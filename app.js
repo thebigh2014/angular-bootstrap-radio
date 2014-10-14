@@ -1,8 +1,8 @@
 "use strict";
 
-angular.module("angular-bootstrap-checkbox-test", ["ui.checkbox"]).controller("index", function($scope) {
-	$scope.checkboxModel = [
-		false, false, false,false, false, false, false, false, true, false, true
+angular.module("angular-bootstrap-radio-test", ["ui.radio"]).controller("index", function($scope) {
+	$scope.radioModel = [
+		"", "second", "third", "fourth", "top", "left"
 	];
 
 	$scope.changes = 0;
@@ -11,4 +11,9 @@ angular.module("angular-bootstrap-checkbox-test", ["ui.checkbox"]).controller("i
 	};
 
 	$scope.isDisabled = false;
+
+  $scope.faConfig = {
+    iconClass: 'fa fa-circle'
+  };
+
 });

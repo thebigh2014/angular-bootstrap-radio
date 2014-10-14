@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 	less: {
 		dist: {
 			files: {
-				'dist/angular-bootstrap-checkbox.css': 'src/*.less'
+				'dist/angular-bootstrap-radio.css': 'src/*.less'
 			}
 		}
 	},
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/angular-bootstrap-checkbox.min.js': ['src/**/*.js']
+          'dist/angular-bootstrap-radio.min.js': ['src/**/*.js']
         }
       }
     },

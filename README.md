@@ -1,106 +1,88 @@
-angular-bootstrap-checkbox
-==========================
+angular-bootstrap-radio
+=======================
 
-Bootstrap styled checkbox directive for AngularJS
+Bootstrap styled radio button directive for AngularJS
 
 Screenshot:
 
-![Screenshot](/checkbox.png?raw=true "Screenshot")
+![Screenshot](/radio.png?raw=true "Screenshot")
 
 ### Description:
 
-The standard checkboxes which use the input HTML element just don't look good in combination with Bootstrap.
+The standard radio buttons which use the input HTML element just don't look good in combination with Bootstrap.
 
-Surprisingly, I could not find any nice looking, simple checkbox, so I built one. It is based on a button and Glyphicons (or FontAwesome, if you prefer) which behaves like a normal checkbox.
+Surprisingly, I could not find any nice looking, simple radio button, so I built one. It is based on a button and FontAwesome which behaves like a normal radio button.
 
-The angular-bootstrap-checkbox is compatible to the use of the original AngularJS input[checkbox], with one minor change: while the original implementation allows an "uninitialized" or other then defined state of the model this one forces "false" or "ng-false-value" (not checked) when not set to "true" or "ng-true-value".
+The angular-bootstrap-radio is compatible with the usage of the original AngularJS input[radio].
 
 ### Installation via Bower:
 
 ```
-$ bower install angular-bootstrap-checkbox --save
+$ bower install angular-bootstrap-radio --save
 ```
 
 ### Usage:
 
-Include the dist files (be sure to choose **only one (1)** of the compiled template files).
+Include the dist files.
 
-If you don't use glyphicons or FontAwesome and instead want to create your own template, see the existing html templates and directive (in /src) and the Gruntfile.js for examples.
+If you don't use FontAwesome and instead want to create your own template, see the directive and LESS (in /src) for examples.
 
-Add "ui.checkbox" to your modules list. Then you can use it like AngularJS input[checkbox]:
+Add "ui.radio" to your modules list. Then you can use it like AngularJS input[radio]:
 
 ```
-<checkbox
-    ng-model="checkboxModel"
+<radio
+    ng-model="radioModel"
+    value="option1"
     name="custom-name"              (Optional)
-    ng-true-value="The Truth"       (Optional)
-    ng-false-value="The Untruth"    (Optional)
     ng-change="onChange()"          (Optional)
-></checkbox>
+    ng-value="scopeValue"           (Optional)
+></radio>
 ```
 
 Additionally you can set the size:
 
 ```
-<checkbox ...></checkbox>            (Normal size, corresponds to 'btn-xs')
-<checkbox class="large" ...></checkbox>      (Large, corresponds to 'btn-sm')
-<checkbox class="larger" ...></checkbox>     (Larger, corresponds to Button default size)
-<checkbox class="largest" ...></checkbox>    (Largest, corresponds to 'btn-lg')
+<radio ...></radio>            (Normal size, corresponds to 'btn-xs')
+<radio class="large" ...></radio>      (Large, corresponds to 'btn-sm')
+<radio class="larger" ...></radio>     (Larger, corresponds to Button default size)
+<radio class="largest" ...></radio>    (Largest, corresponds to 'btn-lg')
 ```
 
 ###Configure
 
-By default, glyphicon icon is used but you can customize the classes within ui-checkbox through the uiCheckboxConfig constant. You can alter the constant globally in your apps boot phase or within a controller and pass the options to the checkbox directive as a parameter.
+By default, FontAwesome icon is used but you can customize the classes within ui-radio through the uiRadioConfig constant. You can alter the constant globally in your apps boot phase or within a controller and pass the options to the radio directive as a parameter.
 
 ```
 //controller
 $scope.customConfig = {
-	iconClass: 'fa fa-check',
+	iconClass: 'fa fa-circle',
 	buttonClass: 'btn btn-default btn-success'
 };
 ```
 
 ```
-<span checkbox="customConfig" ng-model="form.ok"></span>
+<span radio="customConfig" ng-model="form.ok"></span>
 ```
 
 
 ![Screenshot](/sizes.png?raw=true "Screenshot Sizes")
 
-And also style the checkboxes like Bootstrap buttons:
+And also style the radio buttons like Bootstrap buttons:
 
 ```
-<checkbox class="btn-primary"></checkbox>    (Looks like primary button)
-<checkbox class="btn-success"></checkbox>    (Looks like success button)
-<checkbox class="btn-info"></checkbox>       (Looks like info button)
-<checkbox class="btn-warning"></checkbox>    (Looks like warning button)
-<checkbox class="btn-danger"></checkbox>     (Looks like danger button)
+<radio class="btn-primary"></radio>    (Looks like primary button)
+<radio class="btn-success"></radio>    (Looks like success button)
+<radio class="btn-info"></radio>       (Looks like info button)
+<radio class="btn-warning"></radio>    (Looks like warning button)
+<radio class="btn-danger"></radio>     (Looks like danger button)
 ```
 
 ![Screenshot](/styles.png?raw=true "Screenshot Styles")
 
-Invert selection of checkbox
-```
-Show Item
-<checkbox ng-model="data.isHidden" invert="true"></checkbox>
-```
-
-See index.html for examples and how it works.
-
-### Testing:
-
-Start web server e.g. via Python:
-```
-$ python -m SimpleHTTPServer 8000
-```
-
-Start Karma E2E tests (has to be installed globally before):
-```
-$ karma start
-```
+See index-fa.html for examples and how it works.
 
 ### License
 
-Copyright (c) 2014 Sebastian Hammerl, Getslash GmbH
+Copyright (c) 2014 Sebastian Hammerl, Getslash GmbH, Helmut Wollenberg
 
 Licensed under the MIT License
