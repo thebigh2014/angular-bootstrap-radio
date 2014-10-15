@@ -5,7 +5,7 @@
   margin-right: 5px;
   border-radius: 30px;
 }
-.ui-radio i {
+.ui-radio i.fa {
   position: absolute;
   left: 3px;
   top: 3px;
@@ -15,7 +15,7 @@
   height: 23px;
   width: 22px;
 }
-.ui-radio.large i {
+.ui-radio.large i.fa {
   left: 4px;
   top: 4px;
   font-size: 14px;
@@ -24,7 +24,7 @@
   height: 33px;
   width: 33px;
 }
-.ui-radio.larger i {
+.ui-radio.larger i.fa {
   left: 6px;
   top: 5px;
   font-size: 22px;
@@ -33,7 +33,7 @@
   height: 44px;
   width: 44px;
 }
-.ui-radio.largest i {
+.ui-radio.largest i.fa {
   left: 8px;
   top: 7px;
   font-size: 30px;

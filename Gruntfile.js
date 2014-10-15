@@ -22,13 +22,13 @@ module.exports = function(grunt) {
         },
       }
     },
-	less: {
-		dist: {
-			files: {
-				'dist/angular-bootstrap-radio.css': 'src/*.less'
-			}
-		}
-	},
+  	less: {
+  		dist: {
+  			files: {
+  				'dist/angular-bootstrap-radio.css': 'src/*.less'
+  			}
+  		}
+  	},
     uglify: {
       options: {
         mangle: true,
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     },
     watch: {
       all: {
-        files: ['Gruntfile.js', 'src/*.js'],
+        files: ['Gruntfile.js', 'src/*.js', 'src/*.less'],
         tasks: ['default'],
         options: {
           livereload: 1676,

@@ -38,7 +38,6 @@
       <radio config="faConfig" id="radio0First" ng-model="radioModel[0]" value="first"></radio>
       <radio config="faConfig" id="radio0Second" ng-model="radioModel[0]" value="second"></radio>
       <radio config="faConfig" id="radio0Third" ng-model="radioModel[0]" value="third"></radio>
-      <radio config="faConfig" id="radio0Fourth" ng-model="radioModel[0]" value="fourth"></radio>
     </td>
     <td>
       <span id="radioModel0" ng-bind="radioModel[0]">
@@ -55,16 +54,22 @@
       </button><br/ >
       <button id="radioButton0Second" style="width:150px;" ng-click="radioModel[0] = 'third'">
         Set to third
-      </button><br />
-      <button id="radioButton0Second" style="width:150px;" ng-click="radioModel[0] = 'fourth'">
-        Set to fourth
       </button>
     </td>
     <td style="width:300px;">
 
 <pre>&lt;radio
-    ng-model="radioModel[0]"
-&gt;&lt;/radio&gt</pre>
+    ng-model=&quot;radioModel[0]&quot;
+    value=&quot;first&quot;
+&gt;&lt;/radio&gt;
+&lt;radio
+    ng-model=&quot;radioModel[0]&quot;
+    value=&quot;second&quot;
+&gt;&lt;/radio&gt;
+&lt;radio
+    ng-model=&quot;radioModel[0]&quot;
+    value=&quot;third&quot;
+&gt;&lt;/radio&gt;</pre>
 
     </td>
   </tr>
@@ -279,16 +284,16 @@
 
 <pre>&lt;radio
     ng-model="radioModel[4]" &hellip;
-&gt;&lt;/radio&gt
+&gt;&lt;/radio&gt;
 &lt;radio class="<b>large</b>"
     ng-model="radioModel[4]" &hellip;
-&gt;&lt;/radio&gt
+&gt;&lt;/radio&gt;
 &lt;radio class="<b>larger</b>"
     ng-model="radioModel[4]" &hellip;
-&gt;&lt;/radio&gt
+&gt;&lt;/radio&gt;
 &lt;radio class="<b>largest</b>"
     ng-model="radioModel[4]" &hellip;
-&gt;&lt;/radio&gt</pre>
+&gt;&lt;/radio&gt;</pre>
 
     </td>
   </tr>
@@ -341,22 +346,22 @@
 
 <pre>&lt;radio
     ng-model="radioModel[5]" &hellip;
-&gt;&lt;/radio&gt
+&gt;&lt;/radio&gt;
 &lt;radio <b>class="btn-primary"</b>
     ng-model="radioModel[5]" &hellip;
-&gt;&lt;/radio&gt
+&gt;&lt;/radio&gt;
 &lt;radio <b>class="btn-success"</b>
     ng-model="radioModel[5]" &hellip;
-&gt;&lt;/radio&gt
+&gt;&lt;/radio&gt;
 &lt;radio <b>class="btn-info"</b>
     ng-model="radioModel[5]" &hellip;
-&gt;&lt;/radio&gt
+&gt;&lt;/radio&gt;
 &lt;radio <b>class="btn-warning"</b>
     ng-model="radioModel[5]" &hellip;
-&gt;&lt;/radio&gt
+&gt;&lt;/radio&gt;
 &lt;radio <b>class="btn-danger"</b>
     ng-model="radioModel[5]" &hellip;
-&gt;&lt;/radio&gt</pre>
+&gt;&lt;/radio&gt;</pre>
     </td>
   </tr>
 
